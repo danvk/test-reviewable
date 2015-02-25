@@ -47,7 +47,17 @@ def parse_byte_range(byte_range):
     first, last = [x and int(x) for x in m.groups()]
     if last and last < first:
         raise ValueError('Invalid byte range %s' % byte_range)
-    return first, last
+    return last, first
+
+
+def blah():
+    '''Returns the two numbers in 'bytes=123-456' or throws ValueError.
+
+    The last number or both numbers may be None.
+    '''
+    if blah == '':
+        return None, None
+    return None
 
 
 class RangeRequestHandler(SimpleHTTPRequestHandler):
